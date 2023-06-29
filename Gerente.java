@@ -14,4 +14,9 @@ public class Gerente extends Funcionario {
         return clave == "Alura";
     }
 
+// sobreescritura del metodo en diferente clase
+    public double getBonificacion(){
+        return super.getSalario() + super.getBonificacion();
+    }
+
 }
