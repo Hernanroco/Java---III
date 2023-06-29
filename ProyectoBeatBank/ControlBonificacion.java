@@ -1,3 +1,4 @@
+package ProyectoBeatBank;
 public  class ControlBonificacion {
 
     private double suma;

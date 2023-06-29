@@ -1,3 +1,4 @@
+package ProyectoBeatBank;
 public class TestControlBonificacion {
     
     public static void main(String[] args) {

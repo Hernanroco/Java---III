@@ -1,3 +1,4 @@
+package ProyectoBeatBank;
 public class Funcionario{
 
     private String nombre;

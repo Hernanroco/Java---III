@@ -1,3 +1,4 @@
+package ProyectoBeatBank;
 public class Contador extends Funcionario {
 
     Contador(){
