@@ -1,6 +1,6 @@
 package ProyectoBeatBank;
 
-public class Cuenta {
+public abstract class Cuenta {
 
     private double saldo;
     private int agencia = 1;

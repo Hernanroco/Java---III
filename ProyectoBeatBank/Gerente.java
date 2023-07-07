@@ -17,7 +17,7 @@ public class Gerente extends Funcionario {
 
 // sobreescritura del metodo en diferente clase
     public double getBonificacion(){
-        return super.getSalario() + super.getBonificacion();
+        return super.getSalario() + this.getSalario() * 0.1;
     }
 
 }
