@@ -1,17 +1,15 @@
 package ProyectoBeatBank;
-public class Gerente extends Funcionario {
-
-
-    public String clave;
+public class Gerente extends FuncionarioAutenticable {
 
     public Gerente() {
     }
-    
+
+    public String clave;
 
     public void setClave(String clave) {
         this.clave = clave;
     }
-    public boolean iniciarSesion(){
+    public boolean iniciarSesion(String clave){
         return clave == "Alura";
     }
 

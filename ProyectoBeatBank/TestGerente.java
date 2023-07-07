@@ -11,7 +11,7 @@ public class TestGerente {
 
         System.out.println(gerente.getDocumento());
         System.out.println(gerente.getBonificacion());
-        System.out.println(gerente.iniciarSesion());
+        
     }
 }
 
