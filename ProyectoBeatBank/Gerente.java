@@ -1,5 +1,5 @@
 package ProyectoBeatBank;
-public class Gerente extends FuncionarioAutenticable {
+public class Gerente extends Funcionario implements Autenticable {
 
     public Gerente() {
     }

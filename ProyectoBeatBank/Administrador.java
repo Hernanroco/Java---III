@@ -1,19 +1,23 @@
 package ProyectoBeatBank;
 
-public class Administrador extends FuncionarioAutenticable {
+public class Administrador extends Funcionario implements Autenticable {
+    
+    private AutentiacionUtil util;
+
+    public Administrador(){
+        this.util = new AutentiacionUtil();
+    }
     
     @Override
     public double getBonificacion(){
-        return 0;
+        return this.getSalario();
     }
-
-    public String clave;
 
     public void setClave(String clave) {
-        this.clave = clave;
+        this.util.setClave(clave);
     }
     public boolean iniciarSesion(String clave){
-        return clave == "Alura";
+        return this.util.iniciarSesion(clave);
     }
 
 

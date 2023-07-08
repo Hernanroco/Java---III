@@ -1,11 +1,16 @@
 package ProyectoBeatBank;
 
-public class Cliente {
+public class Cliente implements Autenticable {
 
     private String nombre;
     private String documento;
     private String telefono;
+    private AutentiacionUtil util;
 
+    public Cliente(){
+        this.util = new AutentiacionUtil();
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -29,4 +34,18 @@ public class Cliente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public void setClave(String clave) {
+        // TODO Auto-generated method stub
+        this.util.setClave(clave);
+    }
+    
+    @Override
+    public boolean iniciarSesion(String clave) {
+        // TODO Auto-generated method stub
+        return this.util.iniciarSesion(clave);
+        
+    }
+    
 }
