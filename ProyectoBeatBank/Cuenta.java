@@ -6,14 +6,28 @@ public abstract class Cuenta {
     private int agencia = 1;
     private int numero;
     private Cliente titular = new Cliente();
+    private boolean saca;
 
     private static int total;
 
-    public Cuenta( int agencia, int numero) {
-        this.agencia = agencia;
-        this.numero = numero;
-        System.out.println("Estoy creando una cuenta " + this.numero);
+    public Cuenta(){
 
+    }
+
+
+
+    public Cuenta( int agencia, int numero) {
+        if(agencia < 1){
+            throw new IllegalArgumentException("Agencia invalida");
+        }
+        this.agencia = agencia;
+        
+        if(numero < 1){
+            throw new IllegalArgumentException("Numero de cuenta invalido");
+        }
+        this.numero = numero;
+
+        System.out.println("Estoy creando una cuenta " + this.numero);
         Cuenta.total ++;
     }
 
@@ -21,18 +35,16 @@ public abstract class Cuenta {
         this.saldo = this.saldo + valor;
     }
 
-    public boolean saca(double valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
-            return true;
-        } else {
-            return false;
+    public void saca(double valor) throws SaldoInsuficienteException {
+        if(this.saldo < valor){
+            throw new SaldoInsuficienteException("Saldo insuficiente");
         }
+            this.saldo -= valor;
+        
     }
 
-    public boolean transfiere(double valor, Cuenta destino) {
+    public boolean transfiere(double valor, Cuenta destino) throws SaldoInsuficienteException {
         if(this.saldo >= valor) {
-            this.saldo -= valor;
             destino.deposita(valor);
             return true;
         } else {
